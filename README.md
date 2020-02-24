@@ -1,2 +1,3 @@
 # Mikhail
-java
+java Я начал изучать курс java
+
