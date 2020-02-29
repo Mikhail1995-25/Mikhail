@@ -14,7 +14,7 @@ public class SortSelected {
      * @return - Возвращает упорядоченный массив значений.
      */
     public static int[] sort(int[] data){
-        for(int i = 0; i < data.length; i ++) {
+        for (int i = 0; i < data.length; i++) {
             int min = MinDiapason.findMin(data, i, data.length);
             int index = FindLoop.Min(data, min, i, data.length);
             int temp = data[i];
