@@ -30,16 +30,32 @@ public class Tracker {
     }
 
     public Item findById(String id) {
-        Item item = null;
-        for (int index = 0; index < position; index++) {
-            if (items[index].getId().equals(id)) {
-                item = this.items[index];
-            }
-        }
-        return item;
+       int index = indexOf(id);
+       return index != -1 ? items[index] : null;
     }
 
     public Item[] findAll() {
         return Arrays.copyOf(items, position);
+    }
+
+    private int indexOf(String id) {
+        int rs1 = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rs1 = index;
+                break;
+            }
+        }
+        return rs1;
+    }
+
+    public boolean replace(String id, Item item) {
+        int index = indexOf(id);
+        boolean rs1 = index != -1;
+        if (rs1) {
+            item.setId(id);
+            items[index] = item;
+        }
+        return rs1;
     }
 }
