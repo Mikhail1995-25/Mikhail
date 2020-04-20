@@ -35,5 +35,10 @@ public class Store {
                 System.out.println(pr.getName() + " " + pr.getCount());
             }
         }
+        System.out.println();
+        Product product = new Product("Milk", 10);
+        Product product1 = new Product("Milk", 10);
+        boolean b = product.equals(product1);
+        System.out.println(b);
     }
 }
